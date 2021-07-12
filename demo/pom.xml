@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>highlightfx-parent</artifactId>
+    <groupId>org.oxbow</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>highlightfx-demo</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>demo</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.release>11</maven.compiler.release>
+    <javafx.version>16</javafx.version>
+    <javafx.plugin.version>0.0.6</javafx.plugin.version>
+    <gluonfx.plugin.version>1.0.1</gluonfx.plugin.version>
+    <main.class>org.oxbow.highlightfx.Main</main.class>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-base</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-graphics</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.oxbow</groupId>
+      <artifactId>highlightfx</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+      </plugin>
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>${javafx.plugin.version}</version>
+        <configuration>
+          <mainClass>${main.class}</mainClass>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.gluonhq</groupId>
+        <artifactId>gluonfx-maven-plugin</artifactId>
+        <version>${gluonfx.plugin.version}</version>
+        <configuration>
+          <target>${gluonfx.target}</target>
+          <mainClass>${main.class}</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+
+  <profiles>
+    <profile>
+      <id>desktop</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <gluonfx.target>host</gluonfx.target>
+      </properties>
+    </profile>
+    <profile>
+      <id>android</id>
+      <properties>
+        <gluonfx.target>android</gluonfx.target>
+      </properties>
+    </profile>
+    <profile>
+      <id>ios</id>
+      <properties>
+        <gluonfx.target>ios</gluonfx.target>
+      </properties>
+    </profile>
+  </profiles>
+
+</project>

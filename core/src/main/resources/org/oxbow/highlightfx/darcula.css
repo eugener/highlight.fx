@@ -1,0 +1,44 @@
+.syntax-pane {
+    -fx-font-family: 'CamingoCode';
+    -fx-font-size: 1.2em;
+    -fx-background-color: #2c2c2c;
+    -fx-padding: 20;
+}
+
+.text-flow {
+    -fx-border-color: red 2;
+}
+
+.syntax-pane .keyword,
+.syntax-pane .keyword2 {
+    -fx-fill: #c57533;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+}
+
+.syntax-pane .identifier {
+    -fx-fill: #876b96;
+}
+
+.syntax-pane .number {
+    -fx-fill: #6692b5;
+}
+
+.syntax-pane .string,
+.syntax-pane .string2 {
+    -fx-fill: #688358;
+}
+
+.syntax-pane .comment,
+.syntax-pane .comment2 {
+    -fx-fill: #7d7d7d;
+}
+
+.syntax-pane .operator,
+.syntax-pane .type,
+.syntax-pane .type2,
+.syntax-pane .type3,
+.syntax-pane .default,
+.syntax-pane .delimiter {
+    -fx-fill: #a3b1bf;
+}

@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'CamingoCode';
+    src: url('fonts/CamingoCode-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'CamingoCode';
+    src: url('fonts/CamingoCode-Bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'CamingoCode';
+    src: url('fonts/CamingoCode-Italic.ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'CamingoCode';
+    src: url('fonts/CamingoCode-BoldItalic.ttf');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter Regular';
+    src: url('fonts/Inter-Regular.ttf');
+}
+
+.root {
+
+    -fx-accent: #c57533;
+    -fx-focus-color: -fx-accent;
+
+    -fx-base: #2c2c2c;
+    -fx-background: #2c2c2c;
+
+    -fx-font-family: 'Inter Regular';
+
+}
