@@ -28,27 +28,59 @@ public class SyntaxPane extends Control {
 
     // syntaxProperty
     private final ObjectProperty<Syntax> syntaxProperty = new SimpleObjectProperty<>(this, "syntax", Syntax.JAVA);
+
+
+    /**
+     * Chosen {@link Syntax} for control's text. Change of syntax will trigger re-rendering of the control
+     * @return syntax property
+     */
     public final ObjectProperty<Syntax> syntaxProperty() {
        return syntaxProperty;
     }
+
+    /**
+     * Returns currently selected {@link Syntax}
+     * @return current syntax
+     */
     public final Syntax getSyntax() {
        return syntaxProperty.get();
     }
-    public final void setSyntax(Syntax value) {
-        syntaxProperty.set(value);
+
+    /**
+     * Sets new {@link Syntax}. Triggers controls rendering
+     * @param syntax new syntax
+     */
+    public final void setSyntax(Syntax syntax) {
+        syntaxProperty.set(syntax);
     }
 
 
     // textProperty
     private final StringProperty textProperty = new SimpleStringProperty(this, "text", "");
+
+    /**
+     * Text to highlight. Change of text will trigger re-rendering of the control
+     * @return string property
+     */
     public final StringProperty textProperty() {
        return textProperty;
     }
+
+    /**
+     * Returns current text
+     * @return current text
+     */
     public final String getText() {
        return textProperty.get();
     }
-    public final void setText(String value) {
-        textProperty.set(value);
+
+
+    /**
+     * Sets new text. Will trigger re-rendering of the control
+     * @param text current text
+     */
+    public final void setText(String text) {
+        textProperty.set(text);
     }
 
 

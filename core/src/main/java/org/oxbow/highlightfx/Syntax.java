@@ -6,6 +6,9 @@ import java.io.Reader;
 import java.util.Collection;
 import java.util.function.Function;
 
+/**
+ * Syntax types
+ */
 public enum Syntax {
 
     BASH(BashLexer::new),
