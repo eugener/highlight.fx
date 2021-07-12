@@ -24,7 +24,8 @@ public class Main extends Application {
         Syntax.LUA,
         Syntax.PYTHON,
         Syntax.RUBY,
-        Syntax.SCALA
+        Syntax.SCALA,
+        Syntax.XML
     );
 
 
