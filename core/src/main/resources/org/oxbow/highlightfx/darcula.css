@@ -34,10 +34,13 @@
     -fx-fill: #7d7d7d;
 }
 
-.syntax-pane .operator,
 .syntax-pane .type,
 .syntax-pane .type2,
-.syntax-pane .type3,
+.syntax-pane .type3 {
+    -fx-fill: #b5af2b;
+}
+
+.syntax-pane .operator,
 .syntax-pane .default,
 .syntax-pane .delimiter {
     -fx-fill: #a3b1bf;
