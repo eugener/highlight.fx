@@ -16,7 +16,6 @@ public class SyntaxPaneSkin extends SkinBase<SyntaxPane> {
 
     public SyntaxPaneSkin(SyntaxPane syntaxPane) {
         super(syntaxPane);
-        textFlow.getChildren().clear();
         textFlow.setTabSize(4);
         syntaxPane.syntaxProperty().addListener( x -> refresh());
         syntaxPane.textProperty().addListener( x -> refresh());
@@ -28,19 +27,19 @@ public class SyntaxPaneSkin extends SkinBase<SyntaxPane> {
     private void refresh() {
 
         String text = getSkinnable().getText();
-        Syntax syntax = getSkinnable().getSyntax();
         textFlow.getChildren().clear();
         int textPos = 0;
 
-        for (Token token: syntax.parse( new StringReader(text))) {
-
+        for (Token token: getSkinnable().getSyntax().parse( new StringReader(text))) {
             try {
 
-                if ( textPos < token.start) {
-                    addText( textPos, token.start, TokenType.OPERATOR);
-                }
+                // try to add non-tokenized text if exists
+                addText( textPos, token.start, TokenType.OPERATOR);
 
+                // add current tokenized text
                 addText( token.start, token.end(), token.type);
+
+                // update current position
                 textPos = token.end();
 
             } catch ( Exception ex ) {
@@ -48,18 +47,19 @@ public class SyntaxPaneSkin extends SkinBase<SyntaxPane> {
             }
         }
 
-        int lastIndex = text.length()-1;
-        if (textPos < lastIndex) {
-            addText( textPos, lastIndex, TokenType.DEFAULT);
-        }
+        // try to add any leftover non-tokenized text
+        addText( textPos, text.length()-1, TokenType.DEFAULT);
+
 
     }
 
 
     private void addText( int start, int end, TokenType type ) {
-        Text text = new Text(getSkinnable().getText().substring(start, end));
-        text.getStyleClass().setAll(type.name().toLowerCase());
-        textFlow.getChildren().add(text);
+        if (start < end) {
+            Text text = new Text(getSkinnable().getText().substring(start, end));
+            text.getStyleClass().setAll(type.name().toLowerCase());
+            textFlow.getChildren().add(text);
+        }
     }
 
     @Override
