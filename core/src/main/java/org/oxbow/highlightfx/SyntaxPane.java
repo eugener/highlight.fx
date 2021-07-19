@@ -1,9 +1,6 @@
 package org.oxbow.highlightfx;
 
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.scene.control.Control;
 import javafx.scene.control.Skin;
 import org.oxbow.highlightfx.skin.SyntaxPaneSkin;
@@ -84,6 +81,23 @@ public class SyntaxPane extends Control {
     }
 
 
+    // tabSizeProperty
+    private final IntegerProperty tabSizeProperty = new SimpleIntegerProperty(this, "tabSize", 3);
+
+    // Text tab size. Change of text will trigger re-rendering of the control.
+    public final IntegerProperty tabSizeProperty() {
+       return tabSizeProperty;
+    }
+
+    // Returns tab size
+    public final int getTabSize() {
+       return tabSizeProperty.get();
+    }
+
+    // Sets tab size
+    public final void setTabSize(int value) {
+        tabSizeProperty.set(value);
+    }
 
 
 }

@@ -16,9 +16,9 @@ public class SyntaxPaneSkin extends SkinBase<SyntaxPane> {
 
     public SyntaxPaneSkin(SyntaxPane syntaxPane) {
         super(syntaxPane);
-        textFlow.setTabSize(4);
         syntaxPane.syntaxProperty().addListener( x -> refresh());
         syntaxPane.textProperty().addListener( x -> refresh());
+        syntaxPane.tabSizeProperty().bind(textFlow.tabSizeProperty());
         getChildren().add(textFlow);
         refresh();
     }
