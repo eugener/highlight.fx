@@ -4,7 +4,7 @@
 
   <parent>
     <artifactId>highlightfx-parent</artifactId>
-    <groupId>org.oxbow</groupId>
+    <groupId>io.github.eugener</groupId>
     <version>1.0-SNAPSHOT</version>
   </parent>
 
@@ -22,8 +22,8 @@
     <maven.compiler.release>11</maven.compiler.release>
     <javafx.version>16</javafx.version>
     <javafx.plugin.version>0.0.6</javafx.plugin.version>
-    <gluonfx.plugin.version>1.0.1</gluonfx.plugin.version>
-    <main.class>org.oxbow.highlightfx.Main</main.class>
+    <gluonfx.plugin.version>1.0.4</gluonfx.plugin.version>
+    <main.class>io.github.eugener.highlightfx.demo.Main</main.class>
   </properties>
 
   <dependencies>
@@ -43,9 +43,9 @@
       <version>${javafx.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.oxbow</groupId>
+      <groupId>io.github.eugener</groupId>
       <artifactId>highlightfx</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <version>1.0</version>
     </dependency>
   </dependencies>
 
