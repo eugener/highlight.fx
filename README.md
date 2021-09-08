@@ -4,8 +4,6 @@
 
 `SyntaxPane` - lightweight syntax highlighting control.
 
-![java](assets/java.png)
-
-![scala](assets/xml.png)
-
-![xml](assets/xml.png)
+![java](assets/java-demo.png)
+![scala](assets/xml-demo.png)
+![xml](assets/xml-demo.png)
